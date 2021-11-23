@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/Adota-Mais-SPA'),
+      dir: require('path').join(__dirname, './coverage/Adota-Feliz-SPA'),
       subdir: '.',
       reporters: [
         { type: 'html' },
