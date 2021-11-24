@@ -1,5 +1,5 @@
-<agm-map style="height:92vh" [latitude]="lat" [zoom]="zoom" [longitude]="lng">
-  <agm-marker  [latitude]="lat" [longitude]="lng"></agm-marker>
-  <agm-marker  [latitude]="lat2" [longitude]="lng2"></agm-marker>
-  <agm-marker  [latitude]="lat3" [longitude]="lng3"></agm-marker>
+<agm-map style="height:92vh" [latitude]="cityCoordinateLat" [longitude]="cityCoordinateLng" [zoom]="zoom">
+  <div *ngFor="let coordinates of coordinatesList">
+    <agm-marker  [latitude]="coordinates.lat" [longitude]="coordinates.lng"></agm-marker>
+  </div>
 </agm-map>
