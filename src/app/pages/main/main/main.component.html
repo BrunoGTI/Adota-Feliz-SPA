@@ -1,5 +1,22 @@
-<agm-map style="height:92vh" [latitude]="cityCoordinateLat" [longitude]="cityCoordinateLng" [zoom]="zoom">
+<agm-map style="height:92vh" [latitude]="cityCoordinateLat" [longitude]="cityCoordinateLng" [zoom]="zoom" (mapClick)="setShowPhoto()">
+
   <div *ngFor="let coordinates of coordinatesList">
-    <agm-marker  [latitude]="coordinates.lat" [longitude]="coordinates.lng"></agm-marker>
+
+    <agm-marker
+      *ngIf="(coordinates.id == idMarker) ? true : false"
+      [latitude]="coordinates.lat"
+      [longitude]="coordinates.lng"
+      (markerClick)="showPhoto(coordinates.id)"
+      [iconUrl]="{url:'../../../../assets/test.png'}">
+    </agm-marker>
+
+    <agm-marker
+      *ngIf="(coordinates.id == idMarker) ? false : true"
+      [latitude]="coordinates.lat"
+      [longitude]="coordinates.lng"
+      (markerClick)="showPhoto(coordinates.id)">
+    </agm-marker>
+
   </div>
+
 </agm-map>
