@@ -1,3 +1,4 @@
+import { MainModule } from './pages/main/main.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
